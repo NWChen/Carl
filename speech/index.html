@@ -1,0 +1,76 @@
+<html>
+	<head>
+		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<!--<script type="text/javascript" src="//cdn.jsdelivr.net/particle-api-js/5/particle.min.js">-->
+		</script>
+		<style>
+			body {
+				margin: 0 auto;
+				width: 50em;
+				text-align: center;
+				font-family: "Roboto", sans-serif;
+				line-height: 1.5;
+				padding: 4em 1em;
+			}
+			* {
+				color: #222222;
+			}
+			button {
+				background-color:#44c767;
+				-moz-border-radius:28px;
+				-webkit-border-radius:28px;
+				border-radius:28px;
+				border:1px solid #18ab29;
+				display:inline-block;
+				cursor:pointer;
+				color:#ffffff;
+				font-family:Arial;
+				font-size:17px;
+				padding:16px 31px;
+				text-decoration:none;
+			}
+			button:hover {
+				background-color:#5cbf2a;
+			}
+			button:active {
+				position:relative;
+				top:1px;
+			}
+		</style>
+		<title>Speech Test</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.5.0/annyang.min.js"></script>
+	</head>
+	<body>
+		<h1>Speech Recognition Tester</h1>
+		<h3>Say Carl. I dare you.</h3>
+		<h1 id="output">no output</h1>
+		<script>
+
+		if (annyang) {
+			console.log("speech");
+		  // Let's define our first command. First the text we expect, and then the function it should call
+		  var commands = {
+		    'carl *tag': function(tag) {
+		  		console.log(tag);
+		  	},
+		    'testing carl': function() {
+		  		console.log("I hear you.");
+		  	},
+		    'show me test': testCarl
+		  };
+
+		  var testCarl = function() {
+		  	console.log("I hear you.");
+		  }
+
+		  // Add our commands to annyang
+		  annyang.addCommands(commands);
+
+		  // Start listening. You can call this here, or attach this call to an event, button, etc.
+		  annyang.start();
+	}
+
+		</script>
+	</body>
+</html>

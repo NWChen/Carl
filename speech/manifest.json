@@ -1,0 +1,20 @@
+{
+	"manifest_version": 2,
+
+	"name": "CarlWatch",
+	"description": "",
+	"version": "1.0",
+
+	"background": {
+    "scripts": ["popup.js"]
+  },
+
+	"browser_action": {
+		"default_popup": "popup.html"
+	},
+
+	"permissions": [
+		"activeTab",
+		"tabs"
+	]
+}
